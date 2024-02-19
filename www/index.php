@@ -1,58 +1,61 @@
 <?php
 
-$host = 'mysql-db';
-$user = 'db_user';
-$pass = 'secret';
-$db = 'test_database';
+// Database connection using PDO with prepared statements
+try {
+  $host = 'mysql-db';
+  $user = 'db_user';
+  $pass = 'secret';
+  $db = 'test_database';
 
-$conn = new mysqli($host, $user, $pass, $db);
+  $dsn = "mysql:host=$host;dbname=$db";
+  $pdo = new PDO($dsn, $user, $pass);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+  echo "Connected to MySQL successfully using PDO";
 
-echo "Connected to MySQL successfully";
-
-// Handle POST request
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Handle POST request
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
+      $name = $_POST['name'];
+      $email = $_POST['email'];
 
-        // Insert data into the database
-        $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
-        if ($conn->query($sql) === TRUE) {
-            echo "<br>Data inserted successfully";
-        } else {
-            echo "<br>Error inserting data: " . $conn->error;
-        }
+      // Prepare and execute statement with placeholder values
+      $stmt = $pdo->prepare("INSERT INTO users (name, email) VALUES (:name, :email)");
+      $stmt->execute(array(':name' => $name, ':email' => $email));
+
+      echo "<br>Data inserted successfully";
     }
-}
+  }
 
-// Handle GET request
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  // Handle GET request
+  if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET['action']) && $_GET['action'] == 'fetch') {
-        // Retrieve data from the database
-        $result = $conn->query("SELECT * FROM users");
-        if ($result->num_rows > 0) {
-            echo "<br><br>Users:<br>";
-            while ($row = $result->fetch_assoc()) {
-                echo "Name: " . $row["name"] . " - Email: " . $row["email"] . "<br>";
-            }
-        } else {
-            echo "<br>No users in the database";
+      // Prepare and execute statement
+      $stmt = $pdo->prepare("SELECT * FROM users");
+      $stmt->execute();
+
+      if ($stmt->rowCount() > 0) {
+        echo "<br><br>Users:<br>";
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          echo "Name: " . $row["name"] . " - Email: " . $row["email"] . "<br>";
         }
+      } else {
+        echo "<br>No users in the database";
+      }
     }
+  }
+
+  $pdo = null; // Close the connection
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
 }
 
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP Form</title>
+    <title>PHP Form with PDO</title>
 </head>
 <body>
     <h2>Submit Form</h2>
