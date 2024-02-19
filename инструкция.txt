@@ -1,0 +1,10 @@
+http://localhost:8081/
+логин: db_user  
+пароль: secret 
+SQL-запрос
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
