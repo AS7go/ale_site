@@ -1,4 +1,17 @@
 <?php
+// ^[a-zA-Zа-яА-ЯёЁіІїЇєЄ0-9\s\-_.]+$
+// ^[a-zA-Zа-яА-ЯёЁіІїЇєЄ0-9\s\-_.]+$
+    // $string = "Привет, мир!123-_.АБВГДЕёжзиЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    // $input = "Привіт мир - 12Їs_sSSЫЫЫыы._Ґ Ґґʼ ' Пзз0490ггггггБгГгггГїгггггггггггггггггГГггГГкtt";
+    $input = "Привіт мир12ЇssSS-ЫЫЫыыIiІі _Ґ Ґґʼ  Пзз0490гг..ггггБг_ггГїгГкttÄÖÜäöüß";
+
+    if (preg_match('/^[\p{L}\d\-\_\.\ʼ\s]+$/u', $input)) {
+    // if (preg_match('/^[a-zA-Zа-яА-ЯёЁіІїЇєЄҐґ0-9\s\-_ʼ.]+$/u', $input)) {
+        echo "Валидный ввод";
+    } else {
+        echo "Невалидный ввод";
+    }
+echo '<br><br>';
 
 try {
 
@@ -23,28 +36,74 @@ try {
     // Handle POST request
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['submit'])) {
-            
+
             // if (isset($_POST['name'])) {
             //     // Очистка имени
             //     $startTime = microtime(true);
             //     $name = htmlspecialchars($_POST['name']);
             //     $endTime = microtime(true);
             //     $time1 = $endTime - $startTime;
-            
+
             //     $startTime = microtime(true);
             //     $name = preg_replace('/[^a-zA-Z0-9-_.]/', '', $_POST['name']);
+            // $name = preg_replace('/[^a-zA-Z0-9-_.\p{Cyrillic}]/', '', $_POST['name']);
             //     $endTime = microtime(true);
             //     $time2 = $endTime - $startTime;
-            
+
             //     echo "Время выполнения htmlspecialchars(): " . $time1 . " секунд\n";
             //     echo "Время выполнения preg_replace(): " . $time2 . " секунд\n";
             // }
+            // $string = "<h1>Привет, мир!</h1><script>alert('XSS-атака!');</script>";:
 
-            $name = htmlspecialchars($_POST['name']);
+            // $name = htmlspecialchars($_POST['name']);
+            //---------------
+            // $string = "<h1>Привет, мир!</h1><script>alert('XSS-атака!');</script>";
+
+            // Экранирование HTML-символов
+            // $htmlspecialchars_string = htmlspecialchars($string);
+            // $name_str = filter_var($string, FILTER_SANITIZE_STRING); 
+
+            // Удаление JavaScript-кода
+            // $preg_replace_string = preg_replace('/<script>(.*?)<\/script>/is', '', $string);
+
+            // echo "Исходная строка: " . $string . "\n";
+            // echo "Строка после htmlspecialchars(): " . $htmlspecialchars_string . "\n";
+            // echo "Строка после preg_replace(): " . $preg_replace_string . "\n";
+            // echo "Строка FILTER_SANITIZE_STRING после $name_str: " . $name_str . "\n";
+
+            // Удаляем все теги <script> и их содержимое
+            // $string_safe = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $string);
+
+            // echo '11111111 --------' . $string_safe . '----';
+
+            //---------------
+
+        
+
+
+            // $name = strip_tags($_POST['name']);
+            // $name = htmlspecialchars($_POST['name']);
+            // $name = htmlentities($_POST['name']);
+            // $name = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $string);
+
+            // $string = "<h1>Привет, мир!</h1><script>alert('XSS-атака!');</script>";
+            // $string = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $string);
+            // $name = strip_tags($string);
+            // echo 'Введенный код = ' . $name;
+
+            // $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+
+            // $name = preg_replace('/[^а-яА-Яa-zA-Z0-9-_.\p{L}]/', '', $name);
             // $name = preg_replace('/[^a-zA-Z0-9-_.]/', '', $_POST['name']);
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            // $name = preg_replace('/[^a-zA-Z0-9-_.\p{Cyrillic}]/', '', $_POST['name']);
+            // $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+            
+            $name = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $_POST['name']);
+            $name = strip_tags($name);
 
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             // Validate name and email (e.g., length, format)
+
             // Prepare statement with placeholders
             $sql = "INSERT INTO users (name, email) VALUES (?, ?)";
             $stmt = $pdo->prepare($sql);
