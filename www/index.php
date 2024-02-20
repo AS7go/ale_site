@@ -5,12 +5,18 @@ try {
     // === для http://ale.ho.ua
     // $host = 'localhost';
     // $user = 'ale';
-    // $pass = 'alerazvitie';
+    // $pass = '****'; //пароль
+    // $db = 'ale';
+
+    // === для Docker compose
+    // $host = 'mysql-db';
+    // $user = 'root';
+    // $pass = 'secret';
     // $db = 'ale';
 
     // === для Docker compose
     $host = 'mysql-db';
-    $user = 'root';
+    $user = 'ale';
     $pass = 'secret';
     $db = 'ale';
 
