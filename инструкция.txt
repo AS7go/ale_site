@@ -1,13 +1,9 @@
 http://localhost:8081/
 
-база: test_database
-логин: db_user  
-пароль: secret 
-
 поменяно на  
 база: ale   
-логин: root 
-пароль: secret
+логин: ale  
+пароль: secret  
 
 SQL-запрос
 
@@ -17,3 +13,4 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL
 );
 
+============================  

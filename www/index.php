@@ -9,12 +9,6 @@ try {
     // $db = 'ale';
 
     // === для Docker compose
-    // $host = 'mysql-db';
-    // $user = 'root';
-    // $pass = 'secret';
-    // $db = 'ale';
-
-    // === для Docker compose
     $host = 'mysql-db';
     $user = 'ale';
     $pass = 'secret';
