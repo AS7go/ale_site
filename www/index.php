@@ -1,10 +1,18 @@
 <?php
 
 try {
+
+    // === для http://ale.ho.ua
+    // $host = 'localhost';
+    // $user = 'ale';
+    // $pass = 'alerazvitie';
+    // $db = 'ale';
+
+    // === для Docker compose
     $host = 'mysql-db';
-    $user = 'db_user';
+    $user = 'root';
     $pass = 'secret';
-    $db = 'test_database';
+    $db = 'ale';
 
     $dsn = "mysql:host=$host;dbname=$db";
     $pdo = new PDO($dsn, $user, $pass);
