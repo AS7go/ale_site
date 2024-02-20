@@ -23,9 +23,28 @@ try {
     // Handle POST request
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['submit'])) {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
+            
+            // if (isset($_POST['name'])) {
+            //     // Очистка имени
+            //     $startTime = microtime(true);
+            //     $name = htmlspecialchars($_POST['name']);
+            //     $endTime = microtime(true);
+            //     $time1 = $endTime - $startTime;
+            
+            //     $startTime = microtime(true);
+            //     $name = preg_replace('/[^a-zA-Z0-9-_.]/', '', $_POST['name']);
+            //     $endTime = microtime(true);
+            //     $time2 = $endTime - $startTime;
+            
+            //     echo "Время выполнения htmlspecialchars(): " . $time1 . " секунд\n";
+            //     echo "Время выполнения preg_replace(): " . $time2 . " секунд\n";
+            // }
 
+            $name = htmlspecialchars($_POST['name']);
+            // $name = preg_replace('/[^a-zA-Z0-9-_.]/', '', $_POST['name']);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+            // Validate name and email (e.g., length, format)
             // Prepare statement with placeholders
             $sql = "INSERT INTO users (name, email) VALUES (?, ?)";
             $stmt = $pdo->prepare($sql);
