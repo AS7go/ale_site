@@ -18,37 +18,9 @@ try {
     $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // echo "Connected to MySQL successfully using PDO";
+    echo "Connected to MySQL successfully using PDO";
 
     // Handle POST request
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     if (isset($_POST['submit'])) {
-
-    //         $name = $_POST['name'];
-
-    //         // if (preg_match('/^[\p{L}\d\-\_\.\ʼ\s]+$/u', $name)) {
-    //         //     echo "Валидный ввод";
-    //         // } else {
-    //         //     echo "Невалидный ввод";
-    //         // }
-
-    //         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            
-    //         // Prepare statement with placeholders
-    //         $sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-    //         $stmt = $pdo->prepare($sql);
-
-    //         // Bind values to placeholders
-    //         $stmt->bindValue(1, $name, PDO::PARAM_STR);
-    //         $stmt->bindValue(2, $email, PDO::PARAM_STR);
-
-    //         // Execute statement
-    //         $stmt->execute();
-
-    //         echo "<br>Data inserted successfully";
-    //     }
-    // }
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['submit'])) {
     
@@ -56,13 +28,9 @@ try {
     
             // Проверка ввода имени
             if (!preg_match('/^[\p{L}\d\-\_\.\ʼ\s]+$/u', $name)) {
-                // header("Location: index.php");
-                // header("Location: form.php");
-            
                 echo "$name <br>Невалидный ввод имени. Разрешены только буквы, цифры, тире, подчеркивание, точка, апостроф и пробел.";
                 echo '<br><a href="index.php">Назад</a>'; // Кнопка "Назад"
                 exit; // Прекратить выполнение скрипта
-                // return; // Прекратить выполнение скрипта
             }
     
             $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
