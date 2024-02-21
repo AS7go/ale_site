@@ -1,4 +1,5 @@
 <?php
+
 include_once 'db_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -6,11 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST['name'];
 
         if (!preg_match('/^[\p{L}\d\-\_\.\ʼ\s]+$/u', $name)) {
-            // echo "$name <br>Невалидный ввод имени. Разрешены только буквы, цифры, тире, подчеркивание, точка, апостроф и пробел.";
-            // echo "Невалидный ввод имени. Разрешены только буквы, цифры, тире, подчеркивание, точка, апостроф и пробел.";
-            // echo '<br><a href="index.php">Назад</a>'; // Кнопка "Назад"
             header("Location: index.php?error=Invalid name input");
-            exit; // Прекратить выполнение скрипта
+            exit; // It is important to stop running the script after the redirect
         }
 
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -21,10 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindValue(2, $email, PDO::PARAM_STR);
         $stmt->execute();
 
-        // echo "<br>Data inserted successfully";
-
-        // Перенаправляем пользователя обратно на index.php с параметром запроса success
-        header("Location: index.php?success=true");
-        exit; // Важно прекратить выполнение скрипта после перенаправления
+        // Redirect the user back to index.php with the success query parameter
+        header("Location: index.php?success=Data inserted successfully");
+        exit; // It is important to stop running the script after the redirect
     }
 }
+?>

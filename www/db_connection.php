@@ -11,6 +11,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
-    exit(); // Важно прекратить выполнение скрипта в случае неудачного подключения
+    exit(); // It is important to stop running the script after the redirect
 }
 ?>

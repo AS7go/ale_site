@@ -9,8 +9,11 @@
     <h2>Submit Form</h2>
     <?php
     // Проверяем наличие параметра запроса success и его значение
-    if (isset($_GET['success']) && $_GET['success'] === 'true') {
-        echo "<p>Данные успешно введены!</p>";
+    // if (isset($_GET['success']) && $_GET['success'] === 'true') {
+    //     echo "<p>Данные успешно введены!</p>";
+    // }
+    if (isset($_GET['success'])) {
+        echo "<p>{$_GET['success']}</p>";
     }
 
     // Проверяем наличие параметра запроса error и его значение
