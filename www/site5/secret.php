@@ -7,4 +7,5 @@ require_once ROOT . '/incs/functions.php';
 
 $title = 'Secret';
 
+
 require_once VIEWS . '/secret.tpl.php';
