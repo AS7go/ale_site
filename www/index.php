@@ -5,7 +5,7 @@
      <title>PHP Form with PDO</title>
 
      <!-- Bootstrap CSS -->
-     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+     <!-- <link rel="stylesheet" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
      <link href="/bootstrap4_6_2/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="/bootstrap4_6_2/css/fontawesome-free-5.15.4-web/css/all.css">
 

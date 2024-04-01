@@ -1,3 +1,5 @@
+## В репозитории несколько разных сайтов - примеров -> Авторизации (регистрации) аутентификации, CRUD, PDO, ...  
+
 ``` Docker
 http://localhost:8000/
   
@@ -22,7 +24,8 @@ CREATE TABLE users (
 ```
 
 ``` Docker
-=== Dockerfile ========================================
+=== файл Docker
+
 # Use an official PHP runtime
 FROM php:8.2-apache
 
@@ -37,9 +40,15 @@ WORKDIR /var/www/html
 
 # Copy the source code in /www into the container at /var/www/html
 COPY ../www .
+
 ```
+## Проверить! эти строки могут быть лишними в новых версиях ПО
+      # MYSQL_USER: ... # при создании контейнера выдает ошибку, нужно убрать эту строку
+      # MYSQL_PASSWORD: ... # и эту строку
+
 ```yml
-=== docker-compose.yml ================================  
+=== файл docker-compose.yml
+
 version: '3.9'
 services:
   webserver:
@@ -79,6 +88,3 @@ services:
       MYSQL_ROOT_PASSWORD: secret
 
 ```  
-## Проверить
-      # MYSQL_USER: ... # при создании контейнера выдает ошибку, нужно убрать эту строку
-      # MYSQL_PASSWORD: ... # и эту строку убрать
