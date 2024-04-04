@@ -17,7 +17,9 @@
           <div class="container row">
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
-                         <img src="img/crud1.png" class="card-img-top p-1" alt="...">
+                         <a href="/site1">
+                              <img src="img/crud1.png" class="card-img-top p-1" alt="...">
+                         </a>
                          <div class="card-body">
                               <h5 class="card-title">
                                    <a href="/site1" class="card-link text-dark">Add to database</a>
@@ -29,7 +31,9 @@
                </div>
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
-                         <img src="img/crud2.png" class="card-img-top img-fluid p-1" alt="...">
+                         <a href="/site2">
+                              <img src="img/crud2.png" class="card-img-top img-fluid p-1" alt="...">
+                         </a>
                          <div class="card-body">
                               <h5 class="card-title">
                                    <a href="/site2" class="card-link text-dark">CRUD</a>
@@ -41,7 +45,9 @@
                </div>
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
-                         <img src="https://dummyimage.com/300x200/6824b5/ffffff" class="card-img-top" alt="...">
+                         <a href="/site3">
+                              <img src="https://dummyimage.com/300x200/6824b5/ffffff" class="card-img-top" alt="...">
+                         </a>
                          <div class="card-body">
                               <h5 class="card-title">Authentication authorization</h5>
                               <p class="card-text">old, doesn't work Authentication authorization database</p>
@@ -53,7 +59,9 @@
           <div class="container row">
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
-                         <img src="img/di.png" class="card-img-top p-1" alt="...">
+                         <a href="/site4">
+                              <img src="img/di.png" class="card-img-top p-1" alt="...">
+                         </a>
                          <div class="card-body">
                               <h5 class="card-title">Внедрение зависимостей DI</h5>
                               <p class="card-text">Простой пример с использованием MySql</p>
@@ -63,25 +71,29 @@
                </div>
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
-                         <img src="https://dummyimage.com/300x200/347300/ffffff" class="card-img-top" alt="...">
+                         <a href="/site5">
+                              <img src="img/crud5.png" class="card-img-top" alt="...">
+                         </a>
                          <div class="card-body">
-                              <h5 class="card-title">site 5"</h5>
-                              <p class="card-text">Site 5</p>
+                              <h5 class="card-title">Авторизация и регистрация</h5>
+                              <p class="card-text">Авторизация регистрация на чистом PHP</p>
                               <a href="/site5" class="btn btn-primary">Example 5</a>
                          </div>
                     </div>
                </div>
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
-                         <img src="https://dummyimage.com/300x200/6824b5/ffffff" class="card-img-top" alt="...">
-                         <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                         </div>
+                         <a href="/site6">
+                              <img src="https://dummyimage.com/300x200/6824b5/ffffff" class="card-img-top" alt="...">
+                              <div class="card-body">
+                         </a>
+                         <h5 class="card-title">Card title</h5>
+                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                </div>
           </div>
+     </div>
      </div>
 
      <script src="/bootstrap4_6_2/js/jquery.slim.min.js"></script>

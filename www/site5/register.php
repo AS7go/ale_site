@@ -6,6 +6,10 @@ require_once __DIR__ . '/incs/config.php';
 require_once ROOT . '/incs/db.php';
 require_once ROOT . '/incs/functions.php';
 
+if(check_auth()){
+    redirect('secret.php');
+}
+
 $title = 'Register';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -13,11 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(true===($validate = check_required_fields($data))){
         if(register($data)){
-            header("Location: login.php");
-            die();
+            redirect('login.php');
+            // header("Location: login.php");
+            // die();
         }
     }else{
         $_SESSION['errors']=get_errors($validate);
+        // header("Location: register.php");
+        // die();
     }
    
     // dump($validate);

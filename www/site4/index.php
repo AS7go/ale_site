@@ -35,3 +35,5 @@ $posts = $db->select('dep_posts');
 echo '<pre>';
 var_dump($users, $posts);
 echo '</pre>';
+
+echo '<br><a href="javascript:history.back()" class="back-button">Назад</a>';

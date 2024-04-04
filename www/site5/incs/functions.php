@@ -56,6 +56,13 @@ function old(string $name, $post = true): string
     return isset($load_data[$name]) ? h($load_data[$name]) : '';
 }
 
+// redirect
+function redirect(string $url)
+{
+    header("Location: {$url}");
+    die();
+}
+
 function get_errors(array $errors): string
 {
     $html = '<ul class="list-unstyled">';
@@ -101,4 +108,38 @@ function register(array $data): bool
     } catch (PDOException $e) {
         $_SESSION['errors'] = 'Database error: ' . $e->getMessage();
     }
+}
+
+// function login(array $data) //для dump($row);
+function login(array $data): bool
+{
+    global $db;
+
+    $stmt = $db->prepare("SELECT * FROM users_5 WHERE email = ?");
+    $stmt->execute([$data['email']]); //строка
+    if ($row = $stmt->fetch()) {
+        // dump($row);
+        if (!password_verify($data['password'], $row['password'])) {
+            $_SESSION['errors'] = 'Wrong email or password';
+            return false;
+        }
+    } else {
+        $_SESSION['errors'] = 'Wrong email or password';
+        return false;
+    }
+
+    foreach ($row as $key => $value) {
+        if ($key != 'password') {
+            $_SESSION['user'][$key] = $value;
+        }
+    }
+
+    $_SESSION['success'] = 'You have successfully logged';
+    return true;
+}
+
+// проверка зарегистрирован пользователь
+function check_auth(): bool
+{
+    return isset($_SESSION['user']);
 }
