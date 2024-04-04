@@ -3,6 +3,11 @@
 
   <!-- <script src="/bootstrap4_6_2/js/jquery.slim.min.js"></script> -->
   <!-- <script src="/bootstrap4_6_2/js/bootstrap.bundle.min.js"></script> -->
+
+  <br>
+    <!-- <a href="javascript:history.back()" class="back-button">Назад</a> -->
+    <!-- <a href="javascript:history.back()" class="btn btn-secondary">Назад</a> -->
+    <a href="javascript:history.back()" class="btn btn-outline-secondary" style="margin-left: 15px;">Назад</a>
 </body>
 
 </html>
