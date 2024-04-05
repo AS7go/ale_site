@@ -16,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $data = load(['email', 'password']);
 
     if(true===($validate = check_required_fields($data))){
-        if(login($data)){
+        // if(login($data)){ //если использовать global $db в functions.php;
+        if(login($db, $data)){
             redirect('secret.php');
         }
     }else{

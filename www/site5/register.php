@@ -16,20 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $data = load(['name', 'email', 'password']);
 
     if(true===($validate = check_required_fields($data))){
-        if(register($data)){
+        // if(register($data)){ //если использовать global $db в functions.php;
+        if(register($db, $data)){
             redirect('login.php');
-            // header("Location: login.php");
-            // die();
         }
     }else{
         $_SESSION['errors']=get_errors($validate);
-        // header("Location: register.php");
-        // die();
     }
-   
+
     // dump($validate);
-    // dump($_POST);
-    // dump($data);
 }
 
 require_once VIEWS . '/register.tpl.php';

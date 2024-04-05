@@ -85,11 +85,11 @@ function get_alerts(): void
         unset($_SESSION['success']);
     }
 }
-// include 'db.php';
-// function register(PDO $db, array $data)
-function register(array $data): bool
+
+function register(PDO $db, array $data)
+// function register(array $data): bool //если использовать global $db;
 {
-    global $db;
+    // global $db;
     try {
         $stmt = $db->prepare("SELECT COUNT(*) FROM users_5 WHERE email = ?");
         $stmt->execute([$data['email']]); //строка
@@ -111,9 +111,10 @@ function register(array $data): bool
 }
 
 // function login(array $data) //для dump($row);
-function login(array $data): bool
+// function login(array $data): bool
+function login(PDO $db, array $data): bool
 {
-    global $db;
+    // global $db;
 
     $stmt = $db->prepare("SELECT * FROM users_5 WHERE email = ?");
     $stmt->execute([$data['email']]); //строка
