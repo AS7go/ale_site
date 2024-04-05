@@ -75,7 +75,7 @@
                     echo '<div class="col-md-3">';
                     echo '<div class="card mb-3">';
                     echo '<a href="' . $cards[$counter]["url"] . '">';
-                    echo '<img src="' . $cards[$counter]["img_src"] . '" class="card-img-top p-1" alt="...">';
+                    echo '<img src="' . $cards[$counter]["img_src"] . '" class="card-img-top" alt="...">';
                     echo '</a>';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">';
