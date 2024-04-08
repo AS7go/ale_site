@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<html lang="ru">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма регистрации</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+// Файл index.php
 
-<body>
-    <div class="container mt-4">
-        <?php
-        // Проверяем существование и непустое значение куки 'users_3'
-        if(isset($_COOKIE['users_3']) && $_COOKIE['users_3'] !== ''):
-        ?>
-        <p>Привет <?=$_COOKIE['users_3']?>. Чтобы выйти нажмите <a href="/exit.php">Здесь</a>.</p>
-        <?php else: ?>
-        <div class="row">
-            <div class="col">
-                <h2>Форма регистрации</h2>
-                <form action="validation-form/check.php" method="post">
-                    <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Введите имя"><br>
-                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
-                    <button class="btn btn-success" type="submit">Зарегистрировать</button>
-                </form>
-            </div>
-            <div class="col">
-                <h2>Форма авторизации</h2>
-                <form action="validation-form/auth.php" method="post">
-                    <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
-                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
-                    <button class="btn btn-success" type="submit">Авторизоваться</button>
-                </form>
-            </div>
-        </div>
-        <?php endif;?>
-    </div>
-</body>
+$config = require_once 'config.php';
 
-</html>
+require_once 'functions.php';
+require_once 'classes/Db.php';
+require_once 'classes/Pagination.php';
+
+// Инициализируем объект $db
+$db = (Db::getInstance())->getConnection($config['db']);
+
+// Проверяем, был ли успешно инициализирован объект $db
+if (!$db) {
+    echo "Failed to connect to the database.";
+    exit;
+}
+
+// $total = getCount('city'); // c использованием global $db; в functions.php
+// $total = getCount('city', $db); //без global $db; в functions.php
+
+$page = $_GET['page'] ?? 1;
+$per_page = $config['per_page'];
+$total = getCount('city', $db);
+$pagination = new Pagination($page, $per_page, $total);
+$start = $pagination->get_start();
+$cities = get_cities($start, $per_page, $db); //задание $db через параметр
+    
+    // print_arr($cities);
+require_once 'views/index.tpl.php';
