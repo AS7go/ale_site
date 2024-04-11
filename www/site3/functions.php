@@ -11,8 +11,8 @@ function print_arr($data): void
     echo "<pre>" . print_r($data, 1) . "</pre>";
 }
 
-function getCount(string $table, $db): int
-// function getCount(string $table): int 
+function get_count(string $table, $db): int
+// function get_count(string $table): int 
 {
     // global $db;
 

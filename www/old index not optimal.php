@@ -3,18 +3,13 @@
 
 <head>
      <title>PHP Form with PDO</title>
-
      <!-- Bootstrap CSS -->
      <!-- <link rel="stylesheet" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
      <link href="/bootstrap4_6_2/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="/bootstrap4_6_2/css/fontawesome-free-5.15.4-web/css/all.css">
-
      <!-- Подключение стилей из отдельного файла -->
      <link rel="stylesheet" href="css/styles.css">
-
-
 </head>
-
 <body>
      <div class="container">
           <h1 class="mb-3 mt-3">Test PHP code</h1>
@@ -73,7 +68,6 @@
                          </div>
                     </div>
                </div>
-
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
                          <a href="/site5">
@@ -86,7 +80,6 @@
                          </div>
                     </div>
                </div>
-
                <div class="p-1">
                     <div class="card" style="width: 18rem;">
                          <a href="/site6">
@@ -102,16 +95,9 @@
           </div>
      </div>
      </div>
-
      <script src="/bootstrap4_6_2/js/jquery.slim.min.js"></script>
      <script src="/bootstrap4_6_2/js/bootstrap.bundle.min.js"></script>
-
      <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> -->
-
 </body>
-
 </html>
-
-
-

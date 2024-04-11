@@ -17,13 +17,13 @@ if (!$db) {
     exit;
 }
 
-// $total = getCount('city'); // c использованием global $db; в functions.php
-// $total = getCount('city', $db); //без global $db; в functions.php
+// $total = get_count('city'); // c использованием global $db; в functions.php
+// $total = get_count('city', $db); //без global $db; в functions.php
 
 $page = $_GET['page'] ?? 1;
 $per_page = $config['per_page'];
-$total = getCount('city', $db);
-$pagination = new Pagination($page, $per_page, $total);
+$total = get_count('city', $db);
+$pagination = new Pagination((int)$page, $per_page, $total);
 $start = $pagination->get_start();
 $cities = get_cities($start, $per_page, $db); //задание $db через параметр
     

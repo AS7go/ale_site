@@ -21,35 +21,35 @@
         $cards = array(
             array(
                 "url" => "/site1",
-                "img_src" => "img/crud1.png",
+                "img_src" => "img/c1.png",
                 "title" => "Add to database",
                 "text" => "Adding and viewing data in the database",
                 "btn_text" => "Example 1"
             ),
             array(
                 "url" => "/site2",
-                "img_src" => "img/crud2.png",
+                "img_src" => "img/c2.png",
                 "title" => "+++ CRUD",
                 "text" => "Create, Read, Update, Delete operations in the database.",
                 "btn_text" => "Example 2"
             ),
             array(
                 "url" => "/site3",
-                "img_src" => "https://dummyimage.com/300x200/6824b5/ffffff",
+                "img_src" => "img/c3.png",
                 "title" => "Authentication authorization",
                 "text" => "old, doesn't work Authentication authorization database",
                 "btn_text" => "Example 3"
             ),
             array(
                 "url" => "/site4",
-                "img_src" => "img/di.png",
+                "img_src" => "img/c4.png",
                 "title" => "Внедрение зависимостей DI",
                 "text" => "Простой пример с использованием MySql",
                 "btn_text" => "Example 4"
             ),
             array(
                 "url" => "/site5",
-                "img_src" => "img/crud53.png",
+                "img_src" => "img/c5.png",
                 "title" => "+++ Авторизация и регистрация",
                 "text" => "Авторизация регистрация на чистом PHP, пример",
                 "btn_text" => "Example 5"
@@ -75,7 +75,7 @@
                     echo '<div class="col-md-3">';
                     echo '<div class="card mb-3">';
                     echo '<a href="' . $cards[$counter]["url"] . '">';
-                    echo '<img src="' . $cards[$counter]["img_src"] . '" class="card-img-top" alt="...">';
+                    echo '<img src="' . $cards[$counter]["img_src"] . '" class="card-img-top p-1" alt="...">';
                     echo '</a>';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">';
