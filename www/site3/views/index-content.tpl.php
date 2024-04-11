@@ -15,10 +15,10 @@
             <?php foreach ($cities as $city) : ?>
                 <tr id="city-<?= $city['id']; ?>">
                     <th scope="row"><?= $city['id']; ?></th>
-                    <td><?= $city['name']; ?></td>
-                    <td><?= $city['population']; ?></td>
+                    <td class="name"><?= $city['name']; ?></td>
+                    <td class="population"><?= $city['population']; ?></td>
                     <td>
-                        <button class="btn btn-outline-primary btn-edit" data-id="<?= $city['id']; ?>" data-bs-toggle="modal" data-bs-target="#editContent">Edit</button>
+                        <button class="btn btn-outline-primary btn-edit" data-id="<?= $city['id']; ?>" data-bs-toggle="modal" data-bs-target="#editCity">Edit</button>
                         <button class="btn btn-outline-danger btn-delete" data-id="<?= $city['id']; ?>">
                             Delete</button>
 

@@ -36,8 +36,8 @@
             array(
                 "url" => "/site3",
                 "img_src" => "img/c3.png",
-                "title" => "Authentication authorization",
-                "text" => "old, doesn't work Authentication authorization database",
+                "title" => "CRUD on PHP MySQL AJAX Bootstrap 5.3",
+                "text" => "CRUD on PHP MySQL AJAX Bootstrap 5.3",
                 "btn_text" => "Example 3"
             ),
             array(
@@ -56,7 +56,7 @@
             ),
             array(
                 "url" => "/site6",
-                "img_src" => "https://dummyimage.com/300x200/6824b5/ffffff",
+                "img_src" => "img/c6_v2.png",
                 "title" => "Card title",
                 "text" => "Some quick example text to build on the card title and make up the bulk of the card's content.",
                 "btn_text" => "Go somewhere"
