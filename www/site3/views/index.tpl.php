@@ -13,6 +13,27 @@
     <!-- Подключение стилей из отдельного файла -->
     <link rel="stylesheet" href="/css/styles.css">
 
+    <style>
+        #loader {
+            background: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: none;
+        }
+
+        #loader img {
+            width: 100px;
+        }
+
+        #clear-search {
+            cursor: pointer;
+        }
+    </style>
 
 </head>
 
@@ -23,10 +44,29 @@
                 <h1 class="text-center h2 my-3">CRUD on PHP MySQL AJAX Bootstrap 5.3</h1>
             </div>
         </div>
+
         <div class="row">
             <div class="col-12">
-                <button class="btn btn-primary rounded-0 btn-add" data-bs-toggle="modal" data-bs-target="#addCity">Add content</button>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary rounded-0 btn-add" data-bs-toggle="modal" data-bs-target="#addCity">
+                            Add content
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <input type="text" id="search" class="form-control" placeholder="Search...">
+                            <span class="input-group-text" id="clear-search">&times;</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div id="loader">
+                <img src="assets/ripple.svg" alt="">
+            </div>
+
             <div class="table-responsive my-3">
                 <?php require_once 'views/index-content.tpl.php' ?>
             </div>
@@ -64,10 +104,6 @@
                     </form>
 
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
             </div>
         </div>
     </div>
@@ -114,6 +150,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/mark.min.js"></script>
     <script src="assets/main.js"></script>
 
 </body>

@@ -35,7 +35,7 @@
             ),
             array(
                 "url" => "/site3",
-                "img_src" => "img/c3.png",
+                "img_src" => "img/c_3.png",
                 "title" => "CRUD on PHP MySQL AJAX Bootstrap 5.3",
                 "text" => "CRUD on PHP MySQL AJAX Bootstrap 5.3",
                 "btn_text" => "Example 3"
@@ -57,9 +57,9 @@
             array(
                 "url" => "/site6",
                 "img_src" => "img/c6_v2.png",
-                "title" => "Card title",
-                "text" => "Some quick example text to build on the card title and make up the bulk of the card's content.",
-                "btn_text" => "Go somewhere"
+                "title" => "Сайт на Html, css, js, jquery, bootstrap",
+                "text" => "Пример верстки сайта с использованием Html, css, js, jquery.easing.1.3, bootstrap",
+                "btn_text" => "Example 6"
             )
         );
 

@@ -12,6 +12,15 @@ $db = (Db::getInstance())->getConnection($config['db']);
 
 $data = json_decode(file_get_contents('php://input'), true);
 
+// Search
+if(isset($data['search'])){
+    $search = trim($data['search']);
+    $search_cities= search_cities($search, $db);
+    require_once 'views/search.tpl.php';
+    // print_arr($search_cities);
+    die();
+}
+
 //pagination
 if (isset($data['page'])) {
     $page = (int)$data['page'];
