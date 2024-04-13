@@ -28,11 +28,13 @@ function get_count(string $table, $db): int
 function get_cities(int $start, int $per_page, $db): array
 {
     // global $db; // задан через 3-ий параметр
+    // return $db->query("SELECT  id, name, population FROM city LIMIT $start, $per_page")->findAll();
     return $db->query("SELECT * FROM city LIMIT $start, $per_page")->findAll();
 }
 
 // For Search
 function search_cities(string $search, $db): array
 {
+    // return $db->query("SELECT id, name, population  FROM city WHERE name LIKE ?", ["%{$search}%"])->findAll();
     return $db->query("SELECT * FROM city WHERE name LIKE ?", ["%{$search}%"])->findAll();
 }

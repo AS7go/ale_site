@@ -23,20 +23,20 @@
                 "url" => "/site1",
                 "img_src" => "img/c1.png",
                 "title" => "Add to database",
-                "text" => "Adding and viewing data in the database",
+                "text" => "Adding and viewing data in the database <br><br>",
                 "btn_text" => "Example 1"
             ),
             array(
                 "url" => "/site2",
                 "img_src" => "img/c2.png",
                 "title" => "+++ CRUD",
-                "text" => "Create, Read, Update, Delete operations in the database.",
+                "text" => "CRUD with Bootstrap 4.6, Fontawesome-free-5.15.4-web",
                 "btn_text" => "Example 2"
             ),
             array(
                 "url" => "/site3",
                 "img_src" => "img/c_3.png",
-                "title" => "CRUD on PHP MySQL AJAX Bootstrap 5.3",
+                "title" => "+++ CRUD on PHP MySQL AJAX Bootstrap 5.3",
                 "text" => "CRUD on PHP MySQL AJAX Bootstrap 5.3",
                 "btn_text" => "Example 3"
             ),
@@ -44,20 +44,20 @@
                 "url" => "/site4",
                 "img_src" => "img/c4.png",
                 "title" => "Внедрение зависимостей DI",
-                "text" => "Простой пример с использованием MySql",
+                "text" => "Простой пример с использованием MySql <br><br>",
                 "btn_text" => "Example 4"
             ),
             array(
                 "url" => "/site5",
                 "img_src" => "img/c5.png",
                 "title" => "+++ Авторизация и регистрация",
-                "text" => "Авторизация регистрация на чистом PHP, пример",
+                "text" => "Авторизация регистрация на чистом PHP, пример <br><br>",
                 "btn_text" => "Example 5"
             ),
             array(
                 "url" => "/site6",
                 "img_src" => "img/c6_v2.png",
-                "title" => "Сайт на Html, css, js, jquery, bootstrap",
+                "title" => "+++ Сайт на Html, css, js, jquery, bootstrap",
                 "text" => "Пример верстки сайта с использованием Html, css, js, jquery.easing.1.3, bootstrap",
                 "btn_text" => "Example 6"
             )

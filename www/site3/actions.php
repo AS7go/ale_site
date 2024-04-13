@@ -70,6 +70,7 @@ if (isset($_POST['addCity'])) {
 
 if (isset($data['action']) && $data['action'] == 'get_city') {
     $id = isset($data['id']) ? (int)$data['id'] : 0;
+    // $city = $db->query("SELECT id, name, population FROM city WHERE id = ?", [$id])->find();
     $city = $db->query("SELECT * FROM city WHERE id = ?", [$id])->find();
     if($city){
         $res = ['answer' => 'success', 'city'=>$city];
