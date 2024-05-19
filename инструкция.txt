@@ -19,3 +19,12 @@ CREATE TABLE users (
 /^[a-zA-Zа-яА-ЯёЁіІїЇєЄҐґ0-9\s\-_ʼÄÖÜäöüßéèêëàâçîôùû]+$/u
  или
 '/^[\p{L}\d\-\_\.\ʼ\s]+$/u' -читает основные языки, защита от подобных символов ]}>!#$ и тд
+
+
+============================
+для выделения пункта меню категория  /projects/ale_site/www/laravel10-per-hour/
+поменяны строки
+	изменено:      www/laravel10-per-hour/app/Http/Controllers/BlogController.php
+	изменено:      www/laravel10-per-hour/resources/views/includes/categories.blade.php
+	изменено:      www/laravel10-per-hour/resources/views/pages/show-post.blade.php
+

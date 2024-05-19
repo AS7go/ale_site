@@ -37,11 +37,14 @@ class BlogController extends Controller
         
         $post = Post::where('slug', $slug_post)->first();
         $categories = Category::orderBy('title')->get();
+        $current_category = Category::where('slug', $slug_category)->first(); //2из4 Выделение пункта меню активной Категории
+
 
         return view('pages.show-post', [
             'post1' => $post,
             'categories1' => $categories,
             'slug_category1' => $slug_category,
+            'current_category1' => $current_category,  //3из4 Выделение пункта меню активной Категории
         ]);
     }
 }
